@@ -1,0 +1,267 @@
+body{
+    margin: 0px;
+    background-color: #1e1e1e;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+aside {
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:999;
+    display:flex;  
+}
+#menuOpener {
+    width:60px;
+    height:60px;
+    cursor:pointer; /* permite exibir aparencia de clicável */
+    margin-top:10px;
+    margin-right:10px;
+}
+#asideOptions {
+    width:0px;
+    height:100vh;
+    background:rgba(51, 51, 51,0.5); 
+    overflow-x:hidden;
+    overflow-y:auto;
+    transition: all ease .5s;
+    border-left: 1px solid #007acc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#alarmContainer{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #007acc;
+    max-height: 380px;
+}
+
+#waitingTitle, #alarmedTitle{
+    padding: 5px 17px 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all ease 1s;
+    display: flex;
+}
+#waitingTitle{
+    color: #eee;
+    background-color: #1fbb70;
+}
+#alarmedTitle{
+    color: #eee;
+    background-color: #bb1717;
+}
+#alarmListLength, #alarmedListLength{
+    margin-left: 15px;
+    background-color: #eee;
+    padding: 3px 5px 0px 5px;
+    border-radius: 2px;
+    font-size: 18px;  
+    display: none;
+}
+#alarmListLength{
+    color: #1fbb70;
+}
+#alarmedListLength{
+    color: #d14646;
+}
+
+#alarmListDisplay, #alarmedListDisplay{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: fit-content;
+}
+#asideOptionsPane{
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    height: 20px;
+    color: #ffcd42;
+    font-size: 11px;
+}
+#asideOptionsPane div{
+    padding: 4px 10px;
+    cursor: pointer;
+}
+#centerOption{
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+#centerOption:hover{
+    background-color: #696868;
+
+}
+#clearAll:hover{
+    background-color: #bb1717;
+}
+
+#openFulldisplay:hover{
+    background-color: #1fbb70;
+}
+#asideFooter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#info{
+    padding: 5px;
+    background-color: #007acc;
+    color: #eee;
+    padding-left: 15px;
+    font-size: 11px;
+    justify-content: space-between;
+    display: flex;
+}
+
+/* ------------- definidos no JavaScript dinamicamente ----------------------------- */
+.objArea{
+    display: flex;
+    flex-direction: column;
+    background-color: #555;
+    margin-bottom: 1px;
+    flex: 5;
+    color: #eee;
+}
+.objArea:hover{
+    background-color: #696868;
+}
+.alarmContent{
+    display: flex;
+    align-items: flex-start;
+}
+.deleteAlarmButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #696868;
+    color: #ddd;
+    width: 30px;
+    height: 56px;
+}
+.square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1e1e;
+    width: 20px;
+    cursor: pointer;
+}
+.square:hover{
+    background-color: #333;
+    color: #bb1717;
+}
+.displayArea{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    text-shadow: 1px 1px 0px #1e1e1e;
+}
+.label{
+    margin-right: 10px;
+}
+.verde{
+    color: #1fbb70;
+}
+.vermelho{
+    color: #d14646;
+}
+/* -------------------- //  ------------------------ */
+
+#openFullDisplay{
+    background-color: rgba(16, 118, 185, 0.5);
+    width: 880px;
+    height: 390px;
+    margin: auto;
+    border-radius: 10px;
+    position:fixed;
+    z-index:999;
+    flex-direction: column;
+    display: none;
+    margin-top: 25px;
+}
+#fullDisplayOptionBar{
+    display: flex;
+    justify-content: space-between;
+}
+#fullDisplayOptionBar div{
+    padding: 5px 10px 5px 5px;
+    cursor: pointer;
+}
+#fullDisplayOptionBar div:hover{
+    color: #bb1717;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: auto;
+    margin-top: 77px;
+    background-color: #007acc;
+    padding: 5px;
+    border-radius: 5px;
+}
+#clock{
+    color: #fff;
+    font-size: 74px;
+    text-shadow: 1px 1px 1px #1e1e1e;
+}
+#OptionBar{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+    padding: 13px;
+    border-radius: 5px;
+}
+.sectionText{
+    font-size: 27px;
+    color: #ccc;
+    margin-bottom: 10px;
+    display: flex;
+}
+#buttonArea{
+    display: flex;
+}
+#alarmInput{
+    width: 183px;
+}
+#alarmTitle{
+    width: 200px;
+}
+#alarmInput, #alarmTitle{
+    outline: none;
+    padding-left: 10px;
+    padding: 7px;
+    font-size: 23px;
+    color: #FFF;
+    background-color: #333;
+    margin-bottom: 7px;
+    border-radius: 5px;
+}
+button{
+    padding: 4px 7px 4px;
+    margin-right: 7px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#start{
+    background-color: #169b5b;
+    color: #fff;
+}
+#start:hover{
+    background-color: #1fbb70;
+}
+#cancel{
+    background-color: #ddd;
+}
+#cancel:hover{
+    background-color: #eee;
+}

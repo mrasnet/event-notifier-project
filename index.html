@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta id="viewport" name="viewport" content="width=device-width, user-scalable=no"/><!-- tag meta viewport-->
+    <title>Despertador</title>
+    <link rel="icon" type="image/ico" href="clock.ico" />
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <aside>
+        <img onclick="menuOpener()" id="menuOpener" src="clock2.png"></img>
+        <div id="asideOptions">
+            <div id="alarmContainer">
+                <div onclick="alarmListDisplayOpener()" id="waitingTitle">Waiting to alarm <div id="alarmListLength"></div></div>
+                <div id="alarmListDisplay"></div>
+        
+                <div onclick="alarmedListDisplayOpener()" id="alarmedTitle">Already alarmed <div id="alarmedListLength"></div></div>
+                <div id="alarmedListDisplay"></div>
+            </div>
+
+            <div id="asideFooter">
+                <div id="asideOptionsPane">
+                    <div id="clearAll" onclick="clearAlarmedList()">Clear alarmed list</div>
+                    <div id="centerOption" onclick="">Audio options</div>
+                    <div id="openFulldisplay" onclick="openFullDisplay()">Open full display</div>
+                </div>
+                <div id="info"><div></div>created by Matheus Souza</div>
+            </div>
+        </div>
+    </aside>
+    
+    <section id="openFullDisplay">
+        <div id="fullDisplayOptionBar">
+            <div></div>
+            <div onclick="closeFullDisplay()">X</div>
+        </div>
+
+        <div>
+
+        </div>
+    </section>
+
+    <section class="container">
+        <div id='clock'></div>
+        <div id="OptionBar">
+            <div class="sectionText">
+                <div style="color: #ffcd42; padding-right: 3px;">SET</div>A 
+                <div style="color: #1fbb70; padding-left: 4px; padding-right: 2px;">NEW</div>
+                <div style="color: #ce2616;">ALARM</div> 
+            </div>
+            <input id="alarmTitle" type="text" name="alarmTitle" placeholder="Alarm title" autofocus autocomplete="off">
+            <input id="alarmInput" type="time" name="alarmInput"/>
+            <div id="buttonArea">
+                <button id="start" onclick="startAlarm()">Start</button>
+                <button id="cancel" onclick="cancelAlarm()">Cancel</button>
+            </div>
+        </div>
+    </section>   
+
+
+    <!-- código/referencia js no final do body, melhora a peformance da página-->
+    <script src="script.js"></script>
+</body>
+</html>
